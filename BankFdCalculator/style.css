@@ -1,0 +1,258 @@
+body {
+    margin: 0px;
+    padding-top: 70px;
+}
+.container {
+	position: relative;
+	margin-top: 100px;
+}
+.container img {
+	display: block;
+	width: 100%;
+}
+/* calculator box */
+.box {
+    margin: auto;
+    width: 60%;
+    border: 3px solid #929292;
+    padding: 10px;
+}
+
+.box h1 {
+    padding: auto;
+    margin: auto;
+}
+
+/* table */
+
+table {
+    margin: 50px auto;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 60%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+    font-weight: bold;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  /* Slidder */
+  .slidecontainer {
+    width: 100%;
+  }
+  
+  .slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  
+  .slider:hover {
+    opacity: 1;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #0d0179;
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #04AA6D;
+    cursor: pointer;
+  }
+  
+
+
+  /* nav */
+
+nav {
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	right: 0;
+	top: 0;
+	font-family: 'Montserrat', sans-serif;
+	height: 70px;
+	background-color: #ffffff;
+    box-shadow: 0 0px 2px 0 rgba(0,0,0,.11);
+  	
+}
+nav .logo {
+	float: left;
+	width: 40%;
+	height: 50%;
+	display: flex;
+	align-items: center;
+	font-size: 24px;
+	color: #fff;
+    margin-top: 15px;
+  	
+}
+nav .links {
+	float: right;
+	padding: 0;
+	margin: 0;
+	width: 60%;
+	height: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+nav .links li {
+	list-style: none;
+}
+nav .links a {
+	display: block;
+	padding: 1em;
+	font-size: 16px;
+	font-weight: bold;
+	color: rgb(0, 0, 0);
+	text-decoration: none;
+}
+#nav-toggle {
+	position: absolute;
+	top: -100px;
+}
+nav .icon-burger {
+	display: none;
+	position: absolute;
+	right: 5%;
+	top: 50%;
+	transform: translateY(-50%);
+}
+nav .icon-burger .line {
+	width: 30px;
+	height: 4px;
+	background-color: #000000;
+	margin: 5px;
+	border-radius: 2px;
+	transition: all .3s ease-in-out;
+}
+		
+		
+nav .icon-burger .line1 {
+	width: 21px;
+	height: 4px;
+	background-color: #000000;
+	margin-left: 14px;
+	border-radius: 2px;
+	transition: all .3s ease-in-out;
+}
+
+#navLogo {
+   	height:50px;
+    width: 166px;
+    margin: 3%;
+  }
+
+#seprateNav{
+  margin-bottom:1%;
+}
+
+/* navbar progrss */
+
+.progress-container {
+  width: 100%;
+  height: 4px;
+  background: white;
+  position: absolute;
+  bottom: 0;
+}
+
+.progress-bar {
+  height: 4px;
+  background: #0000FF;
+  width: 0%;
+}
+
+@media screen and (max-width: 768px) {
+
+    body {
+        padding-top: 30px;
+      }
+
+  #seprateNav{
+  margin-bottom:8.5%;
+}
+  
+  nav {
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	right: 0;
+	top: 0;
+	font-family: 'Montserrat', sans-serif;
+	height: 63px;
+	background-color: #ffffff;
+    
+  	
+}
+
+	nav .logo {
+		float: none;
+		width: auto;
+		justify-content: left;
+        color: #000000;
+	}
+	nav .links {
+		float: none;
+		position: fixed;
+		z-index: 9;
+		left: 0;
+		right: 0;
+		top: 60px;
+		bottom: 100%;
+		width: auto;
+		height: auto;
+		flex-direction: column;
+		justify-content: space-evenly;
+		background-color: rgba(11, 2, 95, 0.8);
+		overflow: hidden;
+		box-sizing: border-box;
+		transition: all .5s ease-in-out;
+	}
+	nav .links a {
+		font-size: 20px;
+        color:#fff;
+	}
+	nav :checked ~ .links {
+		bottom: 0;
+	}
+	nav .icon-burger {
+		display: block;
+	}
+	nav :checked ~ .icon-burger .line:nth-child(1) {
+		transform: translateY(4px) rotate(225deg);
+	}
+	nav :checked ~ .icon-burger .line:nth-child(3) {
+		transform: translateY(-14px) rotate(-225deg);
+	}
+	nav :checked ~ .icon-burger .line1:nth-child(2) {
+		opacity: 0;
+	}
+  
+  	#navLogo {
+   	height:37px;
+    width: 120px;
+    margin: 3%;
+  }
+	
+}

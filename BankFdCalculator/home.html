@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Bank Fd Calculator</title>
+    <div id="seprateNav">
+        <nav>
+            <input id="nav-toggle" aria-label="navbar" type="checkbox">
+            <div class="logo">
+                <img src="https://ittoday.in/wp-content/uploads/2022/10/site-icon.webp" id="navLogo" alt="logo" />
+            </div>
+            <ul class="links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/">About</a></li>
+                <li><a href="/">Work</a></li>
+                <li><a href="/">Projects</a></li>
+                <li><a href="/">Contact</a></li>
+            </ul>
+            <label for="nav-toggle" id="navbar" class="icon-burger">
+                <div class="line"></div>
+                <div class="line1"></div>
+                <div class="line"></div>
+            </label>
+            <div class="progress-container">
+                <div class="progress-bar" id="myBar"></div>
+            </div>
+        </nav>
+
+
+    </div>
+
+</head>
+
+<body>
+
+    <div class="row">
+
+
+
+        <div class="box">
+
+            <h1>Fd Intrest Calculator</h1>
+
+            <div class="slidecontainer">
+                <p>Amount: <span id="amountOutput"></span> ₹</p>
+                <input type="range" min="10000" max="20000000" value="1" class="slider" id="investAmount">
+            </div>
+            <div class="slidecontainer">
+                <p>Intrest Rate: <span id="intrestRateOut"></span> %</p>
+                <input type="range" min="1" max="20" value="6" class="slider" id="intrestRate">
+            </div>
+
+            <div class="slidecontainer">
+                <p>Time : <span id="TimeOutput"></span> Months</p>
+                <input type="range" min="6" max="100" value="12" class="slider" id="TimeInput">
+            </div>
+
+
+            <div>
+
+                <p>Output : <span id="OutAmount"></span>0 ₹</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div>
+
+        <table>
+            <tr>
+                <td>HDFC</td>
+                <td>7.00%</td>
+            </tr>
+            <tr>
+                <td>AXIS</td>
+                <td>7.10%</td>
+            </tr>
+            <tr>
+                <td>ICICI</td>
+                <td>7.10%</td>
+            </tr>
+            <tr>
+                <td>SBI</td>
+                <td>6.90%</td>
+            </tr>
+        </table>
+    </div>
+
+    </div>
+
+
+
+
+</body>
+<script>
+    /* Amount */
+    var inputAmount = document.getElementById("investAmount");
+    var outputAmount = document.getElementById("amountOutput");
+    outputAmount.innerHTML = inputAmount.value;
+
+    inputAmount.oninput = function () {
+        outputAmount.innerHTML = this.value;
+    }
+
+    /* Intrest */
+
+
+
+    var sliderIntrest = document.getElementById("intrestRate");
+    var outputIntrest = document.getElementById("intrestRateOut");
+    outputIntrest.innerHTML = sliderIntrest.value;
+
+    sliderIntrest.oninput = function () {
+        outputIntrest.innerHTML = this.value;
+    }
+
+
+    /* Time */
+
+    var sliderTime = document.getElementById("TimeInput");
+    var outputTime = document.getElementById("TimeOutput");
+    outputTime.innerHTML = sliderTime.value;
+
+    sliderTime.oninput = function () {
+        outputTime.innerHTML = this.value;
+    }
+
+
+    /* Calculate Outut */
+
+
+        
+    
+
+
+
+</script>
+
+</html>
