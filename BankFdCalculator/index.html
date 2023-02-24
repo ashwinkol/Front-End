@@ -37,7 +37,7 @@
 
 <body>
 
-    <div class="row">
+    <div class="container">
 
 
 
@@ -46,8 +46,17 @@
             <h1>Fd Intrest Calculator</h1>
 
             <div class="slidecontainer">
+                <label for="slider">Slider Value:</label>
+                <input type="number" id="InputNumber" name="slider" min="10000" max="100000" step="1" oninput="updateTextInput(this.value);"> ₹
+                <input type="range" id="sliderValue" name="sliderValue" min="10000" max="100000" step="1" class="slider" onchange="updateSlider(this.value);">
+
+            </div>
+
+
+
+            <div class="slidecontainer">
                 <p>Amount: <span id="amountOutput"></span> ₹</p>
-                <input type="range" min="10000" max="20000000" value="1" class="slider" id="investAmount">
+                <input type="range" min="10000" max="10000000" value="1" class="slider" id="investAmount">
             </div>
             <div class="slidecontainer">
                 <p>Intrest Rate: <span id="intrestRateOut"></span> %</p>
@@ -62,9 +71,13 @@
 
             <div>
 
-                <p>Output : <span id="OutAmount"></span>0 ₹</p>
+                <p>Return : <span id="OutAmount"></span> ₹</p>
             </div>
 
+        </div>
+
+        <div class="boxResult">
+            Hello
         </div>
 
     </div>
@@ -98,13 +111,24 @@
 
 </body>
 <script>
+    function updateTextInput(val) {
+        document.getElementById('sliderValue').value = val;
+    }
+
+    function updateSlider(val) {
+        document.getElementById('InputNumber').value = val;
+    }
+
+
+
     /* Amount */
-    var inputAmount = document.getElementById("investAmount");
+    var inputAmount = document.getElementById("InputNumber");
     var outputAmount = document.getElementById("amountOutput");
     outputAmount.innerHTML = inputAmount.value;
 
     inputAmount.oninput = function () {
         outputAmount.innerHTML = this.value;
+        calculateInterest()
     }
 
     /* Intrest */
@@ -117,6 +141,7 @@
 
     sliderIntrest.oninput = function () {
         outputIntrest.innerHTML = this.value;
+        calculateInterest()
     }
 
 
@@ -128,14 +153,33 @@
 
     sliderTime.oninput = function () {
         outputTime.innerHTML = this.value;
+        calculateInterest()
     }
 
 
     /* Calculate Outut */
 
+    function calculateInterest() {
+        var principal = parseFloat(inputAmount.value);
+        var rate = parseFloat(sliderIntrest.value);
+        var time = Number(sliderTime.value);
 
-        
-    
+        var interest = (principal * rate) / 100;
+        var totalAmount = interest / 12;
+        var result = totalAmount * time
+
+        var finalResult = document.getElementById("OutAmount");
+
+        finalResult.innerHTML = Number(result)
+
+        console.log(finalAmount)
+
+
+    }
+
+
+
+
 
 
 
