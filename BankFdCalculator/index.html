@@ -37,6 +37,9 @@
 </head>
 
 <body>
+    <div style="text-align: center;">
+        <h1>SBI Fd Calculator</h1>
+    </div>
 
     <div class="container">
 
@@ -44,7 +47,6 @@
 
         <div class="box">
 
-            <h1>SBI Fd Calculator</h1>
 
             <div class="slidecontainer">
                 <label for="slider">Amount Value:</label>
@@ -65,34 +67,48 @@
 
 
             <div class="slidecontainer">
-                <label for="slider">Time:</label>
-                <input type="number" id="timeNumber" name="slider" min="6" max="300" step="1"
-                    onchange="updateTimeInput(this.value);" value="6"> Months
-                <input type="range" id="timeSlide" name="sliderTimeValue" min="6" max="300" step="1" class="slider"
-                    onchange="updateTimeSlider(this.value);" value="6">
+                <label for="slider">Months:</label>
+                <input type="number" id="timeNumber" name="slider" min="12" max="300" step="1"
+                    onchange="updateTimeInput(this.value);" value="12"> Months
+                <input type="range" id="timeSlide" name="sliderTimeValue" min="12" max="300" step="1" class="slider"
+                    onchange="updateTimeSlider(this.value);" value="12">
             </div>
-
-
-
 
 
             <div>
 
-                <p>Total Return : <span id="OutAmount"></span> ₹</p>
+                <p>Total Return : <span class="outTotalReturn"></span> ₹</p>
 
-                <p>Total Intrest Earned : <span id="totalIntrest"></span> ₹</p>
+                <p>Total Intrest Earned : <span class="outTotalIntrest"></span> ₹</p>
 
-                <p>Monthly Return : <span id="monthlyReturn"></span> ₹</p>
+                <p>Monthly Return : <span class="outMonthlyReturn"></span> ₹</p>
             </div>
 
         </div>
 
         <div class="boxResult">
+            <div>
+
+                <p>Total Return : <span class="outTotalReturn"></span> ₹</p>
+
+                <p>Total Intrest Earned : <span class="outTotalIntrest"></span> ₹</p>
+
+                <p>Monthly Return : <span class="outMonthlyReturn"></span> ₹</p>
+            </div>
+
             <div class="container">
                 <div class="circular-progress">
-                  <div class="value-container"></div>
+                    <div class="value-container"></div>
                 </div>
-              </div>
+
+            </div>
+
+            <div id="colorBoxRow">
+                <span class="resultColorBox"></span>
+                <h6 id="resultBoxFont">Total Investment</h6>
+                <span class="resultColorBox1"></span>
+                <h6 id="resultBoxFont">Total Returns</h6>
+            </div>
         </div>
 
     </div>
@@ -217,41 +233,52 @@
         var monthlyReturn = interest / 12;
         var result = monthlyReturn * time
 
-        var finalResult = document.getElementById("OutAmount");
-        finalResult.innerHTML = parseInt(Number(result + principal))
+        var finalResult = document.getElementsByClassName("outTotalReturn");
+        finalResult[0].innerHTML = parseInt(Number(result + principal))
+        finalResult[1].innerHTML = parseInt(Number(result + principal))
 
 
-        var IntrestEarned = document.getElementById("totalIntrest")
-        IntrestEarned.innerHTML = parseInt(Number((result + principal) - principal))
+        var IntrestEarned = document.getElementsByClassName("outTotalIntrest")
+        IntrestEarned[0].innerHTML = parseInt(Number((result + principal) - principal))
+        IntrestEarned[1].innerHTML = parseInt(Number((result + principal) - principal))
 
-        var monthlyReturns = document.getElementById("monthlyReturn")
-        monthlyReturns.innerHTML = parseInt(Number(monthlyReturn))
 
+        var monthReturn = document.getElementsByClassName("outMonthlyReturn")
+        monthReturn[0].innerHTML = parseInt(Number(monthlyReturn))
+        monthReturn[1].innerHTML = parseInt(Number(monthlyReturn))
+
+
+           /* Progress Bar */
+
+
+        let progressBar = document.querySelector(".circular-progress");
+        let valueContainer = document.querySelector(".value-container");
+        let progressValue = 0
+        let theValue = parseFloat(((Number((result + principal) - principal)) / principal) * 100);
+        let progressEndValue = parseInt(100 - theValue)
+        console.log(theValue)
+        console.log((Number((result + principal) - principal)))
+        console.log(principal)
+        let speed = 18;
+
+        let progress = setInterval(() => {
+            progressValue++;
+            valueContainer.textContent = `${progressValue}%`;
+            progressBar.style.background = `conic-gradient(
+      #000555 ${progressValue * 3.6}deg,
+      #c2c2c2 ${progressValue * 3.6}deg
+  )`;
+            if (progressValue == progressEndValue) {
+                clearInterval(progress);
+            }
+        }, speed);
+        
     }
 
 
 
 
-    /* Progress Bar */
 
-    let progressBar = document.querySelector(".circular-progress");
-    let valueContainer = document.querySelector(".value-container");
-
-    let progressValue = 0;
-    let progressEndValue = 43;
-    let speed = 18;
-
-    let progress = setInterval(() => {
-        progressValue++;
-        valueContainer.textContent = `${progressValue}%`;
-        progressBar.style.background = `conic-gradient(
-      #000555 ${progressValue * 3.6}deg,
-      #c2c2c2 ${progressValue * 3.6}deg
-  )`;
-        if (progressValue == progressEndValue) {
-            clearInterval(progress);
-        }
-    }, speed);
 
 
 
