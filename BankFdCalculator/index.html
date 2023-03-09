@@ -37,40 +37,40 @@
 </head>
 
 <body>
+   
     <div style="text-align: center;">
         <h1>SBI Fd Calculator</h1>
     </div>
 
     <div class="container">
-
-
+        
 
         <div class="box">
 
-
+            
             <div class="slidecontainer">
                 <label for="slider">Amount Value:</label>
                 <input type="number" id="InputNumber" name="AmountInput" min="10000" max="10000000" step="1000"
-                    value="10000" onchange="updateTextInput(this.value);"> ₹
+                    value="100000" onchange="updateTextInput(this.value);"> ₹
                 <input type="range" id="SliderValue" name="sliderAmountValue" min="10000" max="10000000" step="1000"
-                    class="slider" value="10000" onchange="updateSlider(this.value);">
+                    class="slider" value="100000" onchange="updateSlider(this.value);">
             </div>
 
 
             <div class="slidecontainer">
                 <label for="slider">Intrest Rate:</label>
                 <input type="number" id="IntrestNumber" name="slider" min="1" max="20" step="0.1"
-                    onchange="updateIntrestInput(this.value);" value="1"> %
+                    onchange="updateIntrestInput(this.value);" value="6.5"> %
                 <input type="range" id="sliderIntrest" name="sliderIntrestValue" min="1" max="20" step="0.1"
-                    class="slider" onchange="updateIntrestSlider(this.value);" value="1">
+                    class="slider" onchange="updateIntrestSlider(this.value);" value="6.5">
             </div>
 
 
             <div class="slidecontainer">
                 <label for="slider">Months:</label>
-                <input type="number" id="timeNumber" name="slider" min="12" max="300" step="1"
+                <input type="number" id="timeNumber" name="slider" min="12" max="60" step="1"
                     onchange="updateTimeInput(this.value);" value="12"> Months
-                <input type="range" id="timeSlide" name="sliderTimeValue" min="12" max="300" step="1" class="slider"
+                <input type="range" id="timeSlide" name="sliderTimeValue" min="12" max="60" step="1" class="slider"
                     onchange="updateTimeSlider(this.value);" value="12">
             </div>
 
