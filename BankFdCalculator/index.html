@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Use our bank calculators to easily estimate loan payments, savings goals, and more. Our simple and user-friendly tools can help you make informed financial decisions. Get started today!">
+
     <link rel="icon" href="/favicon.ico">
     <link rel="stylesheet" href="style.css" />
     <title>Bank Fd Calculator</title>
@@ -12,7 +15,7 @@
         <nav>
             <input id="nav-toggle" aria-label="navbar" type="checkbox">
             <div class="logo">
-                <img src="Logo.png" id="navLogo" alt="logo" />
+                <img src="Logo.png" id="navLogo" alt="logo" height="52px" width="50px" />
             </div>
             <ul class="links">
                 <li><a href="/">Home</a></li>
@@ -37,41 +40,41 @@
 </head>
 
 <body>
-   
+
     <div style="text-align: center;">
         <h1>SBI Fd Calculator</h1>
     </div>
 
     <div class="container">
-        
+
 
         <div class="box">
 
-            
+
             <div class="slidecontainer">
                 <label for="slider">Amount Value:</label>
                 <input type="number" id="InputNumber" name="AmountInput" min="10000" max="10000000" step="1000"
-                    value="100000" onchange="updateTextInput(this.value);"> ₹
+                    value="100000" onchange="updateTextInput(this.value);" aria-labelledby="Amount Value"> ₹
                 <input type="range" id="SliderValue" name="sliderAmountValue" min="10000" max="10000000" step="1000"
-                    class="slider" value="100000" onchange="updateSlider(this.value);">
+                    class="slider" value="100000" onchange="updateSlider(this.value);" aria-labelledby="Amount Value">
             </div>
 
 
             <div class="slidecontainer">
                 <label for="slider">Intrest Rate:</label>
                 <input type="number" id="IntrestNumber" name="slider" min="1" max="20" step="0.1"
-                    onchange="updateIntrestInput(this.value);" value="6.5"> %
+                    onchange="updateIntrestInput(this.value);" value="6.5" aria-labelledby="Intrest Rate"> %
                 <input type="range" id="sliderIntrest" name="sliderIntrestValue" min="1" max="20" step="0.1"
-                    class="slider" onchange="updateIntrestSlider(this.value);" value="6.5">
+                    class="slider" onchange="updateIntrestSlider(this.value);" value="6.5" aria-labelledby="Intrest Rate">
             </div>
 
 
             <div class="slidecontainer">
                 <label for="slider">Months:</label>
                 <input type="number" id="timeNumber" name="slider" min="12" max="60" step="1"
-                    onchange="updateTimeInput(this.value);" value="12"> Months
+                    onchange="updateTimeInput(this.value);" value="12" aria-labelledby="Months"> Months
                 <input type="range" id="timeSlide" name="sliderTimeValue" min="12" max="60" step="1" class="slider"
-                    onchange="updateTimeSlider(this.value);" value="12">
+                    onchange="updateTimeSlider(this.value);" value="12" aria-labelledby="Months">
             </div>
 
 
@@ -248,7 +251,7 @@
         monthReturn[1].innerHTML = parseInt(Number(monthlyReturn))
 
 
-           /* Progress Bar */
+        /* Progress Bar */
 
 
         let progressBar = document.querySelector(".circular-progress");
@@ -272,7 +275,7 @@
                 clearInterval(progress);
             }
         }, speed);
-        
+
     }
 
 
