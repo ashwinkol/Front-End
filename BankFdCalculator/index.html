@@ -78,6 +78,7 @@
                     onchange="updateTimeSlider(this.value);" value="12" aria-labelledby="Months">
             </div>
 
+                <br />    
 
             <div>
 
@@ -101,16 +102,14 @@
             </div>
 
             <div class="container">
-                <div class="pie animate" style="--p:50;--c:darkblue"> </div>
-
-
+                <div id="my-pie" class="pie animate" style="--p:20;--c:darkblue;--b:22px;--w:150px;"> </div>
             </div>
 
             <div id="colorBoxRow">
                 <span class="resultColorBox"></span>
-                <h6 id="resultBoxFont">Total Investment</h6>
+                <h6 id="resultBoxFont">Total Return</h6>
                 <span class="resultColorBox1"></span>
-                <h6 id="resultBoxFont">Total Returns</h6>
+                <h6 id="resultBoxFont">Total Investment</h6>
             </div>
         </div>
 
@@ -160,7 +159,6 @@
 
     }
 
-
     function updateIntrestInput(val) {
         document.getElementById('sliderIntrest').value = val;
     }
@@ -168,9 +166,6 @@
     function updateIntrestSlider(val) {
         document.getElementById('IntrestNumber').value = val;
     }
-
-
-
 
 
     function updateTimeInput(val) {
@@ -224,68 +219,65 @@
 
 
 
-    /* Calculate Outut */
 
     function calculateInterest() {
         var principal = parseFloat(inputAmount.value);
         var rate = parseFloat(inputIntrest.value);
-        var time = Number(timeNumber.value);
+        var months = parseInt(timeNumber.value);
 
+        var interest = (principal * rate * months) / (12 * 100);
+        var totalReturn = principal + interest;
+        var monthlyReturn = interest / months;
 
-        var interest = (principal * rate) / 100;
-        var monthlyReturn = interest / 12;
-        var result = monthlyReturn * time
+        console.log('Interest: ' + interest);
+        console.log('Total return: ' + totalReturn);
+        console.log('Monthly return: ' + monthlyReturn);
 
         var finalResult = document.getElementsByClassName("outTotalReturn");
-        finalResult[0].innerHTML = parseInt(Number(result + principal))
-        finalResult[1].innerHTML = parseInt(Number(result + principal))
+        finalResult[0].innerHTML = parseInt(totalReturn);
+        finalResult[1].innerHTML = parseInt(totalReturn);
 
+        var IntrestEarned = document.getElementsByClassName("outTotalIntrest");
+        IntrestEarned[0].innerHTML = parseInt(interest);
+        IntrestEarned[1].innerHTML = parseInt(interest);
 
-        var IntrestEarned = document.getElementsByClassName("outTotalIntrest")
-        IntrestEarned[0].innerHTML = parseInt(Number((result + principal) - principal))
-        IntrestEarned[1].innerHTML = parseInt(Number((result + principal) - principal))
-
-
-        var monthReturn = document.getElementsByClassName("outMonthlyReturn")
-        monthReturn[0].innerHTML = parseInt(Number(monthlyReturn))
-        monthReturn[1].innerHTML = parseInt(Number(monthlyReturn))
-
+        var monthReturn = document.getElementsByClassName("outMonthlyReturn");
+        monthReturn[0].innerHTML = parseInt(monthlyReturn);
+        monthReturn[1].innerHTML = parseInt(monthlyReturn);
 
         /* Progress Bar */
 
+        // let progressValue = 0;
+        // let theValue = parseFloat((interest / principal) * 100);
+        // let progressEndValue = parseInt(100 - theValue);
 
-        let progressBar = document.querySelector(".circular-progress");
-        let valueContainer = document.querySelector(".value-container");
-        let progressValue = 0
-        let theValue = parseFloat(((Number((result + principal) - principal)) / principal) * 100);
-        let progressEndValue = parseInt(100 - theValue)
-        console.log(theValue)
-        console.log((Number((result + principal) - principal)))
-        console.log(principal)
-        let speed = 18;
+        // const myPie = document.getElementById("my-pie");
+        // myPie.style.setProperty("--p", progressEndValue);
 
-        let progress = setInterval(() => {
-            progressValue++;
-            valueContainer.textContent = `${progressValue}%`;
-            progressBar.style.background = `conic-gradient(
-      #000555 ${progressValue * 3.6}deg,
-      #c2c2c2 ${progressValue * 3.6}deg
-  )`;
-            if (progressValue == progressEndValue) {
-                clearInterval(progress);
-            }
-        }, speed);
+        // console.log('Progress Value: ' + progressEndValue);
 
+
+        let earnedAmount = (interest / 100) * principal; // calculate earned amount
+        let totalAmount = principal + earnedAmount; // calculate total amount
+        let progressValue = (earnedAmount / totalAmount) * 100; // calculate progress value in percentage
+        let progressEndValue = 100 - progressValue; // calculate progress end value in percentage
+
+        const myPie = document.getElementById("my-pie");
+        myPie.style.setProperty("--p", progressEndValue+15);
+
+        console.log('Progress End Value: ' + progressEndValue + '%');
+        console.log('Progress Value: ' + progressValue + '%');
+
+        console.log('Earned Amount: ' + earnedAmount + ', Total Amount: ' + totalAmount);
     }
 
 
 
 
 
+    /* Calculate Output */
 
-
-
-
+    
 </script>
 
 </html>
