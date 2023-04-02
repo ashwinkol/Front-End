@@ -19,7 +19,10 @@
             </div>
             <ul class="links">
                 <li><a href="/">Home</a></li>
-                <li><a href="/">Contact</a></li>
+                <li><a href="/">Blog</a></li>
+                <li><a href="/">Privacy Policy</a></li>
+                <li><a href="/">Terms of Service</a></li>
+                <li><a href="/">Contact Us</a></li>
                 <li><a href="/">About</a></li>
             </ul>
             <label for="nav-toggle" id="navbar" class="icon-burger">
@@ -42,7 +45,7 @@
 <body>
 
     <div style="text-align: center;">
-        <h1>SBI Fd Calculator</h1>
+        <h1 id="headline">SBI Fd Calculator</h1>
     </div>
 
     <div class="container">
@@ -78,11 +81,11 @@
                     onchange="updateTimeSlider(this.value);" value="12" aria-labelledby="Months">
             </div>
 
-                <br />    
+            <br />
 
             <div>
 
-                <p>Total Return : <span class="outTotalReturn"></span> ₹</p>
+                <p id="totalReturn"]>Total Return : <span class="outTotalReturn"></span> ₹</p>
 
                 <p>Total Intrest Earned : <span class="outTotalIntrest"></span> ₹</p>
 
@@ -116,25 +119,38 @@
     </div>
 
     <div>
-
+        <h1 id="tableHeading">Updated On 2 Apr 2023</h1>
         <table>
             <tr>
-                <td>HDFC</td>
-                <td>7.00%</td>
+                <th>Tenor</th>
+                <th>Intrest Rates</th>
+                <th>Senior Citizen Rates</th>
             </tr>
             <tr>
-                <td>AXIS</td>
-                <td>7.10%</td>
+                <td>7 - 14 days</td>
+                <td>3.00%</td>
+                <td>3.50%</td>
             </tr>
             <tr>
-                <td>ICICI</td>
-                <td>7.10%</td>
+                <td>7 - 14 days</td>
+                <td>3.00%</td>
+                <td>3.50%</td>
             </tr>
             <tr>
-                <td>SBI</td>
-                <td>6.90%</td>
+                <td>7 - 14 days</td>
+                <td>3.00%</td>
+                <td>3.50%</td>
+            </tr>
+            <tr>
+                <td>7 - 14 days</td>
+                <td>3.00%</td>
+                <td>3.50%</td>
             </tr>
         </table>
+    </div>
+
+    <div class="discription">
+        <p>Hello this is the online calculator</p>
     </div>
 
     </div>
@@ -149,6 +165,28 @@
 </body>
 
 <script>
+
+    window.addEventListener('load', function () {
+        document.getElementById('InputNumber').value = 100000; // set the name input value to 'John Doe'
+        document.getElementById('IntrestNumber').value = 6.5; // set the email input value to 'johndoe@example.com'
+        document.getElementById('timeNumber').value = 12; // set the age input value to 25
+
+        var initialTotalReturn = 100000;
+        var initialTotalInterest = 106000;
+        var initialMonthlyReturn = 500;
+
+        // Display the initial values in the output elements
+        var totalReturnOutput = document.querySelector('.outTotalReturn');
+        totalReturnOutput.textContent = initialTotalReturn;
+
+        var totalInterestOutput = document.querySelector('.outTotalIntrest');
+        totalInterestOutput.textContent = initialTotalInterest;
+
+        var monthlyReturnOutput = document.querySelector('.outMonthlyReturn');
+        monthlyReturnOutput.textContent = initialMonthlyReturn;
+    });
+
+
     function updateTextInput(val) {
         document.getElementById('SliderValue').value = val;
 
@@ -263,7 +301,7 @@
         let progressEndValue = 100 - progressValue; // calculate progress end value in percentage
 
         const myPie = document.getElementById("my-pie");
-        myPie.style.setProperty("--p", progressEndValue+15);
+        myPie.style.setProperty("--p", progressEndValue + 15);
 
         console.log('Progress End Value: ' + progressEndValue + '%');
         console.log('Progress Value: ' + progressValue + '%');
@@ -277,7 +315,7 @@
 
     /* Calculate Output */
 
-    
+
 </script>
 
 </html>
