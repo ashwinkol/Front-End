@@ -24,6 +24,11 @@ body {
 	margin-bottom: 10px;
 	gap: 70px;
 
+}	
+
+#icon {
+	width: 100px;
+	height: 100px;
 }
 
 /* Blog */
@@ -48,6 +53,7 @@ a {
 	text-decoration: none;
 	padding: 10px;
 	font-weight: 650;
+	font-size: 16px;
 }
 a:hover {
 	text-decoration: underline;
@@ -68,6 +74,11 @@ p {
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.13);
 	border-radius: 20px;
 	flex: 1 1 calc(33.33% - 10px);
+	align-items: center;
+	justify-content: center;
+	place-items: center;
+	display: grid;
+
 }
 
 #HomeFont {
@@ -487,6 +498,15 @@ input[type="range"]::-webkit-slider-thumb {
 		margin-right: auto;
 		max-width: 50rem;
 		margin: 10px;
+	}
+
+	a {
+		font-family: "Google Sans", roboto, arial, helvetica;
+		color: #26282b;
+		text-decoration: none;
+		padding: 10px;
+		font-weight: 650;
+		font-size: 14px;
 	}
 
 	p {
