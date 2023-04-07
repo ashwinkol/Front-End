@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Use our bank calculators to easily estimate loan payments, savings goals, and more. Our simple and user-friendly tools can help you make informed financial decisions. Get started today!">
+
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="style.css" />
+    <title>HDFC Bank Fd Calculator</title>
+    <div id="seprateNav">
+        <nav>
+            <input id="nav-toggle" aria-label="navbar" type="checkbox">
+            <div class="logo">
+                <img src="Logo.png" id="navLogo" alt="logo" height="52px" width="50px" />
+            </div>
+            <ul class="links">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/blog.html">Blog</a></li>
+                <li><a href="/">Privacy Policy</a></li>
+                <li><a href="/">Terms of Service</a></li>
+                <li><a href="/">Contact Us</a></li>
+                <li><a href="/">About</a></li>
+            </ul>
+            <label for="nav-toggle" id="navbar" class="icon-burger">
+                <div class="line"></div>
+                <div class="line1"></div>
+                <div class="line"></div>
+            </label>
+            <div class="progress-container">
+                <div class="progress-bar" id="myBar"></div>
+            </div>
+        </nav>
+
+
+    </div>
+
+
+
+</head>
+
+<body>
+
+    <div style="text-align: center;">
+        <h1 id="headline">Fd Calculator</h1>
+    </div>
+
+    <div class="container">
+
+
+        <div class="box">
+
+
+            <div class="slidecontainer">
+                <label for="slider">Amount Value:</label>
+                <input type="number" id="InputNumber" name="AmountInput" min="10000" max="10000000" step="1000"
+                    value="100000" onchange="updateTextInput(this.value);" aria-labelledby="Amount Value"> ₹
+                <input type="range" id="SliderValue" name="sliderAmountValue" min="10000" max="10000000" step="1000"
+                    class="slider" value="100000" onchange="updateSlider(this.value);" aria-labelledby="Amount Value">
+            </div>
+
+
+            <div class="slidecontainer">
+                <label for="slider">Intrest Rate:</label>
+                <input type="number" id="IntrestNumber" name="slider" min="1" max="20" step="0.1"
+                    onchange="updateIntrestInput(this.value);" value="6.5" aria-labelledby="Intrest Rate"> %
+                <input type="range" id="sliderIntrest" name="sliderIntrestValue" min="1" max="20" step="0.1"
+                    class="slider" onchange="updateIntrestSlider(this.value);" value="6.5"
+                    aria-labelledby="Intrest Rate">
+            </div>
+
+
+            <div class="slidecontainer">
+                <label for="slider">Months:</label>
+                <input type="number" id="timeNumber" name="slider" min="12" max="60" step="1"
+                    onchange="updateTimeInput(this.value);" value="12" aria-labelledby="Months"> Months
+                <input type="range" id="timeSlide" name="sliderTimeValue" min="12" max="60" step="1" class="slider"
+                    onchange="updateTimeSlider(this.value);" value="12" aria-labelledby="Months">
+            </div>
+
+            <br />
+
+            <div>
+
+                <p id="totalReturn"]>Total Return : <span class="outTotalReturn"></span> ₹</p>
+
+                <p>Total Intrest Earned : <span class="outTotalIntrest"></span> ₹</p>
+
+                <p>Monthly Return : <span class="outMonthlyReturn"></span> ₹</p>
+            </div>
+
+        </div>
+
+        <div class="boxResult">
+            <div>
+
+                <p>Total Return : <span class="outTotalReturn"></span> ₹</p>
+
+                <p>Total Intrest Earned : <span class="outTotalIntrest"></span> ₹</p>
+
+                <p>Monthly Return : <span class="outMonthlyReturn"></span> ₹</p>
+            </div>
+
+            <div class="container">
+                <div id="my-pie" class="pie animate" style="--p:20;--c:darkblue;--b:22px;--w:150px;"> </div>
+            </div>
+
+            <div id="colorBoxRow">
+                <span class="resultColorBox"></span>
+                <h6 id="resultBoxFont">Total Return</h6>
+                <span class="resultColorBox1"></span>
+                <h6 id="resultBoxFont">Total Investment</h6>
+            </div>
+        </div>
+
+    </div>
+
+    <div>
+        <h1 id="tableHeading">Updated On 2 Apr 2023</h1>
+        <table>
+            <tr>
+                <th>Tenor</th>
+                <th>Intrest Rates</th>
+                <th>Senior Citizen Rates</th>
+            </tr>
+            <tr>
+                <td>7 - 14 days</td>
+                <td>3.00%</td>
+                <td>3.50%</td>
+            </tr>
+            <tr>
+                <td>7 - 14 days</td>
+                <td>3.00%</td>
+                <td>3.50%</td>
+            </tr>
+            <tr>
+                <td>7 - 14 days</td>
+                <td>3.00%</td>
+                <td>3.50%</td>
+            </tr>
+            <tr>
+                <td>7 - 14 days</td>
+                <td>3.00%</td>
+                <td>3.50%</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="discription">
+        <p>Hello this is the online calculator</p>
+    </div>
+
+    </div>
+
+
+
+
+    <footer>
+        <h1>2023 BankCalculators.in</h1>
+
+    </footer>
+</body>
+
+<script>
+
+    window.addEventListener('load', function () {
+        document.getElementById('InputNumber').value = 100000; // set the name input value to 'John Doe'
+        document.getElementById('IntrestNumber').value = 6.5; // set the email input value to 'johndoe@example.com'
+        document.getElementById('timeNumber').value = 12; // set the age input value to 25
+
+        var initialTotalReturn = 100000;
+        var initialTotalInterest = 106000;
+        var initialMonthlyReturn = 500;
+
+        // Display the initial values in the output elements
+        var totalReturnOutput = document.querySelector('.outTotalReturn');
+        totalReturnOutput.textContent = initialTotalReturn;
+
+        var totalInterestOutput = document.querySelector('.outTotalIntrest');
+        totalInterestOutput.textContent = initialTotalInterest;
+
+        var monthlyReturnOutput = document.querySelector('.outMonthlyReturn');
+        monthlyReturnOutput.textContent = initialMonthlyReturn;
+    });
+
+
+    function updateTextInput(val) {
+        document.getElementById('SliderValue').value = val;
+
+    }
+
+    function updateSlider(val) {
+        document.getElementById('InputNumber').value = val;
+
+    }
+
+    function updateIntrestInput(val) {
+        document.getElementById('sliderIntrest').value = val;
+    }
+
+    function updateIntrestSlider(val) {
+        document.getElementById('IntrestNumber').value = val;
+    }
+
+
+    function updateTimeInput(val) {
+        document.getElementById('timeSlide').value = val;
+    }
+
+    function updateTimeSlider(val) {
+        document.getElementById('timeNumber').value = val;
+    }
+
+
+
+    /* Amount */
+    var inputAmount = document.getElementById("InputNumber");
+    var inputAmountSlide = document.getElementById("SliderValue");
+
+    inputAmountSlide.oninput = function () {
+        calculateInterest()
+    }
+    inputAmount.oninput = function () {
+        calculateInterest()
+    }
+
+    /* Intrest */
+    var sliderIntrest = document.getElementById("IntrestNumber");
+    var inputIntrest = document.getElementById("sliderIntrest");
+
+
+    inputIntrest.oninput = function () {
+        calculateInterest()
+    }
+
+    sliderIntrest.oninput = function () {
+        calculateInterest()
+    }
+
+
+    /* Time */
+
+    var inputTime = document.getElementById("timeNumber");
+    var timeBySlide = document.getElementById("timeSlide");
+
+    inputTime.oninput = function () {
+        calculateInterest()
+    }
+
+    timeBySlide.oninput = function () {
+        calculateInterest()
+    }
+
+
+
+
+
+    function calculateInterest() {
+        var principal = parseFloat(inputAmount.value);
+        var rate = parseFloat(inputIntrest.value);
+        var months = parseInt(timeNumber.value);
+
+        var interest = (principal * rate * months) / (12 * 100);
+        var totalReturn = principal + interest;
+        var monthlyReturn = interest / months;
+
+        console.log('Interest: ' + interest);
+        console.log('Total return: ' + totalReturn);
+        console.log('Monthly return: ' + monthlyReturn);
+
+        var finalResult = document.getElementsByClassName("outTotalReturn");
+        finalResult[0].innerHTML = parseInt(totalReturn);
+        finalResult[1].innerHTML = parseInt(totalReturn);
+
+        var IntrestEarned = document.getElementsByClassName("outTotalIntrest");
+        IntrestEarned[0].innerHTML = parseInt(interest);
+        IntrestEarned[1].innerHTML = parseInt(interest);
+
+        var monthReturn = document.getElementsByClassName("outMonthlyReturn");
+        monthReturn[0].innerHTML = parseInt(monthlyReturn);
+        monthReturn[1].innerHTML = parseInt(monthlyReturn);
+
+        /* Progress Bar */
+
+        // let progressValue = 0;
+        // let theValue = parseFloat((interest / principal) * 100);
+        // let progressEndValue = parseInt(100 - theValue);
+
+        // const myPie = document.getElementById("my-pie");
+        // myPie.style.setProperty("--p", progressEndValue);
+
+        // console.log('Progress Value: ' + progressEndValue);
+
+
+        let earnedAmount = (interest / 100) * principal; // calculate earned amount
+        let totalAmount = principal + earnedAmount; // calculate total amount
+        let progressValue = (earnedAmount / totalAmount) * 100; // calculate progress value in percentage
+        let progressEndValue = 100 - progressValue; // calculate progress end value in percentage
+
+        const myPie = document.getElementById("my-pie");
+        myPie.style.setProperty("--p", progressEndValue + 15);
+
+        console.log('Progress End Value: ' + progressEndValue + '%');
+        console.log('Progress Value: ' + progressValue + '%');
+
+        console.log('Earned Amount: ' + earnedAmount + ', Total Amount: ' + totalAmount);
+    }
+
+
+
+
+
+    /* Calculate Output */
+
+
+</script>
+
+</html>
