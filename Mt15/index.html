@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,22 +9,22 @@
         content="Use our bank calculators to easily estimate loan payments, savings goals, and more. Our simple and user-friendly tools can help you make informed financial decisions. Get started today!">
 
     <link rel="icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <title>MT15</title>
     <div id="seprateNav">
         <nav>
             <input id="nav-toggle" aria-label="navbar" type="checkbox">
             <div class="logo">
-                <h1>MT15</h1>
-              <!-- /*  <img src="Logo.png" id="navLogo" alt="logo" height="52px" width="50px" /> */ -->
+                <h1 id="HomeFont">MT15</h1>
+                <!-- /*  <img src="Logo.png" id="navLogo" alt="logo" height="52px" width="50px" /> */ -->
             </div>
             <ul class="links">
                 <li><a href="/index.html">Home</a></li>
-                <li><a href="/blog.html">Blog</a></li>
-                <li><a href="/">Privacy Policy</a></li>
-                <li><a href="/">Terms of Service</a></li>
                 <li><a href="/">Contact Us</a></li>
-                <li><a href="/">About</a></li>
+                <li><a href="/">About Us</a></li>
             </ul>
             <label for="nav-toggle" id="navbar" class="icon-burger">
                 <div class="line"></div>
@@ -37,8 +38,318 @@
 
 
     </div>
+
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        .slider-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slider {
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-top: 1.3%;
+            opacity: unset;
+        }
+
+        .circle-container {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+        }
+
+        .circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin: 0 10px;
+            cursor: pointer;
+            border: 2px solid #000;
+        }
+
+        .black {
+            background-color: black;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .dlx {
+            background-color: #ffcc00;
+        }
+
+        /* Yellow */
+        .red {
+            background-color: red;
+        }
+
+        .strom {
+            background-color: #00ff00;
+        }
+
+        /* Green */
+
+        /* Table */
+
+        table {
+            align-content: center;
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+        }
+
+        td,
+        th {
+
+            text-align: left;
+            padding: 8px;
+
+        }
+
+        #heading {
+            text-align: center;
+            background-color: #000000;
+            color: white;
+        }
+
+
+        table {
+            align-content: center;
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+        }
+
+        td,
+        th {
+
+            text-align: left;
+            padding: 8px;
+
+        }
+
+        #heading {
+            text-align: center;
+            background-color: #444444;
+            color: white;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div class="slider-container">
+        <div class="slider" style="background-image: url('image_red.jpg')"></div>
+        <div class="circle-container">
+            <div class="circle black"></div>
+            <div class="circle blue"></div>
+            <div class="circle dlx"></div>
+            <div class="circle red"></div>
+            <div class="circle strom"></div>
+        </div>
+    </div>
+
+    <div>
+        <h2 id="HomeFont">MT-15 V2 Specifications</h2>
+        <table cellspacing="0">
+            <tbody>
+                <!-- Engine -->
+                <tr>
+                    <th id="heading" colspan="2" scope="colgroup">Engine</th>
+                </tr>
+                <tr>
+                    <td id="bold"><a>Engine type</a></td>
+                    <td>Liquid cooled, 4-stroke, SOHC, 4-valve</td>
+                </tr>
+                <tr>
+                    <td id="bold"><a>Displacement</a></td>
+                    <td>155cc</td>
+                </tr>
+                <tr>
+                    <td id="bold"><a>Bore & Stroke</a></td>
+                    <td>58.0 mm x 58.7 mm</td>
+                </tr>
+                <tr>
+                    <td id="bold"><a>Compression ratio</a></td>
+                    <td>11.6 : 1</td>
+                </tr>
+                <tr>
+                    <td id="bold"><a>Maximum Horse Power</a></td>
+                    <td>13.5kW(18.4PS)/10000r/min</td>
+                </tr>
+                <tr>
+                    <td id="bold"><a>Maximum torque</a></td>
+                    <td>14.1N.m(1.4kgf.m)/7500r/min</td>
+                </tr>
+                <tr>
+                    <td id="bold"><a>Clutch Type</a></td>
+                    <td>Wet, Multiple Disc</td>
+                </tr>
+                <tr>
+                    <td id="bold"><a>Fuel system</a></td>
+                    <td>Fuel Injection</td>
+                </tr>
+                <tr>
+                    <td id="bold"><a>Transmission type</a></td>
+                    <td>Constant mesh, 6-speed</td>
+                </tr>
+                <tr>
+                    <td id="bold"><a>Starting system type</a></td>
+                    <td>Electric starter</td>
+                </tr>
+
+                <!-- Dimension -->
+                <tr>
+                    <th id="heading" colspan="2" scope="colgroup">Dimension</th>
+                </tr>
+                <tr>
+                    <td id="bold">Overall length</td>
+                    <td>2015mm</td>
+                </tr>
+                <tr>
+                    <td id="bold">Overall width</td>
+                    <td>800mm</td>
+                </tr>
+                <tr>
+                    <td id="bold">Overall height</td>
+                    <td>1,070mm</td>
+                </tr>
+                <tr>
+                    <td id="bold">Minimum ground clearance</td>
+                    <td>170mm</td>
+                </tr>
+                <tr>
+                    <td id="bold">Kerb weight (with oil and a full fuel tank)</td>
+                    <td>141 kg</td>
+                </tr>
+                <tr>
+                    <td id="bold">Seat height</td>
+                    <td>810mm</td>
+                </tr>
+                <tr>
+                    <td id="bold">Wheelbase</td>
+                    <td>1,325mm</td>
+                </tr>
+                <tr>
+                    <td id="bold">Inner tube diameter of front fork</td>
+                    <td>37.0mm</td>
+                </tr>
+                <tr>
+                    <td id="bold">Fuel tank capacity</td>
+                    <td>10L</td>
+                </tr>
+
+                <!-- Chassis -->
+                <tr>
+                    <th id="heading" colspan="2" scope="colgroup">Chassis</th>
+                </tr>
+                <tr>
+                    <td id="bold">Frame type</td>
+                    <td>Deltabox</td>
+                </tr>
+                <tr>
+                    <td id="bold">Brake type (Front)</td>
+                    <td>Disc Brake (282mm)</td>
+                </tr>
+                <tr>
+                    <td id="bold">Brake type (Rear)</td>
+                    <td>Disc Brake (220mm)</td>
+                </tr>
+                <tr>
+                    <td id="bold">Suspension type (front/rear)</td>
+                    <td>Telescopic upside down Front Fork / Linked-type Monocross suspension</td>
+                </tr>
+                <tr>
+                    <td id="bold">Tyre size (Front)</td>
+                    <td>100/80-17M/C 52P - Tubeless</td>
+                </tr>
+                <tr>
+                    <td id="bold">Tyre size (Rear)</td>
+                    <td>140/70R-17M/C 66H - Radial Tubeless</td>
+                </tr>
+                <tr>
+                    <td id="bold">ABS</td>
+                    <td>Dual Channel ABS</td>
+                </tr>
+
+                <!-- Other Details -->
+                <tr>
+                    <th id="heading" colspan="2" scope="colgroup">Other Details</th>
+                </tr>
+                <tr>
+                    <td id="bold">Battery</td>
+                    <td>12 V, 4.0 Ah</td>
+                </tr>
+                <tr>
+                    <td id="bold">Clock</td>
+                    <td>Digital</td>
+                </tr>
+                <tr>
+                    <td id="bold">Y-Connect (Smartphone Bluetooth connectivity)</td>
+                    <td>Equipped</td>
+                </tr>
+                <tr>
+                    <td id="bold">VVA</td>
+                    <td>Equipped</td>
+                </tr>
+                <tr>
+                    <td id="bold">Gear Position Indicator</td>
+                    <td>Equipped</td>
+                </tr>
+                <tr>
+                    <td id="bold">Fuel consumption indicator</td>
+                    <td>Equipped</td>
+                </tr>
+                <tr>
+                    <td id="bold">Shift timing light</td>
+                    <td>Equipped</td>
+                </tr>
+                <tr>
+                    <td id="bold">VVA indicator</td>
+                    <td>Equipped</td>
+                </tr>
+                <tr>
+                    <td id="bold">Sidestand engine cut-off switch</td>
+                    <td>Equipped</td>
+                </tr>
+
+
+            </tbody>
+        </table>
+    </div>
 </body>
+<script>
+    const slider = document.querySelector('.slider');
+    const circles = document.querySelectorAll('.circle');
+
+    circles.forEach(circle => {
+        circle.addEventListener('click', () => {
+            const color = circle.classList[1]; // Get the second class which represents the color
+            slider.style.backgroundImage = `url('images/color_${color}.webp')`;
+        });
+    });
+
+    // Set default color to red on page load
+    slider.style.backgroundImage = `url('images/color_red.webp')`;
+</script>
+
 </html>
