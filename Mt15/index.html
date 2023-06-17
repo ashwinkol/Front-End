@@ -22,7 +22,8 @@
                 <!-- /*  <img src="Logo.png" id="navLogo" alt="logo" height="52px" width="50px" /> */ -->
             </div>
             <ul class="links">
-                <li><a href="/index.html">Home</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="blog.html">Blog</a></li>
                 <li><a href="/">Contact Us</a></li>
                 <li><a href="/">About Us</a></li>
             </ul>
@@ -35,8 +36,6 @@
                 <div class="progress-bar" id="myBar"></div>
             </div>
         </nav>
-
-
     </div>
 
     <style>
@@ -125,7 +124,7 @@
 
         #heading {
             text-align: center;
-            background-color: #000000;
+            background-color: #726a6a;
             color: white;
         }
 
@@ -150,13 +149,38 @@
 
         #heading {
             text-align: center;
-            background-color: #444444;
+            background-color: #726a6a;
             color: white;
+        }
+
+        /* Info */
+
+        .container {
+            display: flex;
+            max-width: 80%;
+            /* Sets the maximum width to 80% */
+            margin: 0 auto;
+            margin-top: 2%;
+            /* Centers the container horizontally */
+        }
+
+        .box {
+            flex: 1;
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        .box img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
         }
     </style>
 </head>
 
 <body>
+
     <div class="slider-container">
         <div class="slider" style="background-image: url('image_red.jpg')"></div>
         <div class="circle-container">
@@ -166,6 +190,64 @@
             <div class="circle red"></div>
             <div class="circle strom"></div>
         </div>
+    </div>
+
+    <div class="container">
+        <div class="box">
+            <img src="image.jpg" alt="Image">
+        </div>
+        <div class="box">
+            <h2 id="HomeFont">Traction Control system</h2>
+            <p>The MT-15 V2 comes with Traction Control System. This is a dedicated electronic system that has the
+                remarkable ability of reducing the chances of a wheelspin (slippage due to loss of traction). </p>
+        </div>
+
+    </div>
+
+    <div class="container">
+        <div class="box">
+            <h1 id="HomeFont">Variable Valve Actuation</h1>
+            <p>Variable Valve Actuation (VVA) system provides top-end power without sacrificing torquey character in the
+                low to mid-rpm range. There are two intake valve cams: one for low to mid-range rpm and another for high
+                rpm. They switch between each other at the 7,400rpm mark to ensure good power and torque is present
+                throughout the rev range. </p>
+        </div>
+
+        <div class="box">
+            <img src="image.jpg" alt="Image">
+        </div>
+
+    </div>
+
+    <div class="container">
+        <div class="box">
+            <img src="image.jpg" alt="Image">
+        </div>
+
+        <div class="box">
+            <h1 id="HomeFont">Assist & Slipper Clutch</h1>
+            <p>An Assist and Slipper clutch (ASC) is adopted to reduce the weight of the clutch pull and provide
+                low-stress shifting during deceleration. ASC helps to reduce fatigue for the rider. This also prevents
+                excessive engine braking, thus reducing its effects on chassis behavior. ASC makes for smooth, enjoyable
+                downshifts.</p>
+        </div>
+
+
+    </div>
+
+    <div class="container">
+        <div class="box">
+            <h1 id="HomeFont">Upside Down Front Forks</h1>
+            <p>The structure of the Upside Down front forks allows front wheel ample room for free movement, which makes
+                it easier for the bike to navigate and change directions at higher speeds, making it more agile, true to
+                the character of MT-15.
+            </p>
+        </div>
+
+        <div class="box">
+            <img src="image.jpg" alt="Image">
+        </div>
+
     </div>
 
     <div>
@@ -335,7 +417,51 @@
 
             </tbody>
         </table>
+
+
+        <h2 id="HomeFont">MT-15 V2 Color & Price</h2>
+
+        <h1 id="HomeFont">Ex-Showroom Price in Maharashtra </h1>
+        <h1 id="HomeFont"> ₹ 1,65,639*</h1>
+
+        <h2 id="HomeFont">Accessories</h2>
+
+        <div class="container">
+
+
+            <div class="box">
+                <h1 id="HomeFont"> </h1>
+                <p></p>
+            </div>
+
+            <div class="box">
+                <h1 id="HomeFont"> </h1>
+                <p></p>
+            </div>
+
+            <div class="box">
+                <h1 id="HomeFont"> </h1>
+                <p></p>
+            </div>
+
+            <div class="box">
+                <h1 id="HomeFont"> </h1>
+                <p></p>
+            </div>
+
+
+
+        </div>
+
+
     </div>
+    </br>
+    <footer>
+        <h1 id="HomeFont">Follow us on</h1>
+        <a href="privacy.html">Privacy Policy</a> |
+        <a href="terms.html">Terms of Use</a> |
+        <a href="about.html">Disclaimer</a>
+    </footer>
 </body>
 <script>
     const slider = document.querySelector('.slider');
