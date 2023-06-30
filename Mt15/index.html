@@ -46,11 +46,7 @@
             height: 100%;
         }
 
-        .slider-container {
-            width: 100%;
-            height: 100%;
-            position: relative;
-        }
+
 
         .slider {
             width: 100%;
@@ -88,7 +84,7 @@
         }
 
         .dlx {
-            background-color: #ffcc00;
+            background-color: #000000;
         }
 
         /* Yellow */
@@ -97,7 +93,7 @@
         }
 
         .strom {
-            background-color: #00ff00;
+            background-color: #09c1da;
         }
 
         /* Green */
@@ -166,7 +162,7 @@
 
         .box {
             flex: 1;
-            border: 1px solid black;
+
             padding: 10px;
         }
 
@@ -176,6 +172,31 @@
             display: block;
             margin: 0 auto;
         }
+
+        /* Acessories */
+
+        .buy-button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        #BuyButton {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #BuyButton:hover {
+            background-color: rgb(240, 53, 53);
+        }
     </style>
 </head>
 
@@ -184,10 +205,9 @@
     <div class="slider-container">
         <div class="slider" style="background-image: url('image_red.jpg')"></div>
         <div class="circle-container">
-            <div class="circle black"></div>
+            <div class="circle red"></div>
             <div class="circle blue"></div>
             <div class="circle dlx"></div>
-            <div class="circle red"></div>
             <div class="circle strom"></div>
         </div>
     </div>
@@ -430,23 +450,37 @@
 
 
             <div class="box">
-                <h1 id="HomeFont"> </h1>
-                <p></p>
+                <h1 id="HomeFont">Seat Cover</h1> <br /> <br />
+                <img class="accessory" src="/Mt15/images/SeatCover.jpg" />
+                <div class="buy-button-container"> <!-- Add a container for the button -->
+                    <button id="BuyButton">Buy Now</button>
+                </div>
+            </div>
+
+
+
+            <div class="box">
+                <h1 id="HomeFont">Oil</h1>
+                <img class="accessory" src="/Mt15/images/oil.png" height="80px" width="80px" />
+                <div class="buy-button-container"> <!-- Add a container for the button -->
+                    <button id="BuyButton">Buy Now</button>
+                </div>
             </div>
 
             <div class="box">
-                <h1 id="HomeFont"> </h1>
-                <p></p>
+                <h1 id="HomeFont">Trail Carrier</h1>
+                <img class="accessory" src="/Mt15/images/TrailCarrier.png" />
+                <div class="buy-button-container"> <!-- Add a container for the button -->
+                    <button id="BuyButton">Buy Now</button>
+                </div>
             </div>
 
             <div class="box">
-                <h1 id="HomeFont"> </h1>
-                <p></p>
-            </div>
-
-            <div class="box">
-                <h1 id="HomeFont"> </h1>
-                <p></p>
+                <h1 id="HomeFont">Sticker</h1>
+                <img class="accessory" src="/Mt15/images/Sticker.jpg" />
+                <div class="buy-button-container"> <!-- Add a container for the button -->
+                    <button id="BuyButton">Buy Now</button>
+                </div>
             </div>
 
 
@@ -461,6 +495,7 @@
         <a href="privacy.html">Privacy Policy</a> |
         <a href="terms.html">Terms of Use</a> |
         <a href="about.html">Disclaimer</a>
+        <br /> <br />
     </footer>
 </body>
 <script>
